@@ -1,0 +1,22 @@
+[package]
+name = "linera-tx-generator"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.92"
+async-graphql = "=7.0.2"
+async-graphql-axum = "=7.0.2"
+async-graphql-derive = "=7.0.2"
+clap = "4.5.20"
+env_logger = "0.11.5"
+log = "0.4.22"
+rand = "0.8.5"
+thiserror = "1.0.67"
+tokio = { version = "1.41.0", features = ["rt", "rt-multi-thread", "macros"] }
+
+linera-base = { git = "https://github.com/linera-io/linera-protocol.git", branch = "main", features = [] }
+linera-client = { git = "https://github.com/linera-io/linera-protocol.git", branch = "main", features = ["storage-service"] }
+linera-execution = { git = "https://github.com/linera-io/linera-protocol.git", branch = "main" }
+linera-sdk = { git = "https://github.com/linera-io/linera-protocol.git", branch = "main" }
+linera-service = { git = "https://github.com/linera-io/linera-protocol.git", branch = "main", features = ["linera-storage-service", "storage-service"] }
