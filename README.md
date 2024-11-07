@@ -7,6 +7,26 @@ against a given network according to some test cases.
 > The current repository is based of the `linera-protocol` `main` branch at
 > commit [`d169df69`](https://github.com/linera-io/linera-protocol/tree/d169df69bcc6e861c3c54e8874c45f93401be08f).
 
+## Pre Requirements
+
+Install the linera binaries in the `target/release` folder with:
+
+```bash
+$ cargo install --git https://github.com/linera-io/linera-protocol.git --branch main --bins --root ./target/release/  
+linera-service
+
+$ cargo install --git https://github.com/linera-io/linera-protocol.git --branch main --bins --root ./target/release/ 
+linera-storage-service
+```
+
+Also add them to your path if you do not have already installed the linera binaries
+globally:
+
+```bash
+export PATH="$PWD/target/release:$PATH"
+source /dev/stdin <<<"$(linera net helper 2>/dev/null)"
+```
+
 ## CLI
 
 The current CLI can be ran with the following:
@@ -28,18 +48,6 @@ Options:
 
 > **Warning**
 > The current CLI only handles local network
-
-## Local network
-
-To run a local network, make sure that you have properly installed the linera
-binary. If not you can follow [its documentation](https://linera.dev/developers/getting_started/installation.html).
-
-Otherwise, it is possible to simple add the binaries available in this repository with:
-
-```bash
-export PATH="$PWD/target/release:$PATH"
-source /dev/stdin <<<"$(linera net helper 2>/dev/null)"
-```
 
 ## Test Cases
 
